@@ -1,0 +1,48 @@
+object Form1: TForm1
+  Left = 735
+  Height = 286
+  Top = 270
+  Width = 259
+  Caption = 'Form1'
+  ClientHeight = 286
+  ClientWidth = 259
+  OnCreate = FormCreate
+  LCLVersion = '1.4.4.0'
+  object Label1: TLabel
+    Left = 21
+    Height = 15
+    Top = 18
+    Width = 41
+    Caption = 'Tanggal'
+    ParentColor = False
+  end
+  object Edit1: TEdit
+    Left = 96
+    Height = 23
+    Top = 10
+    Width = 80
+    TabOrder = 0
+  end
+  object Calendar1: TCalendar
+    Left = 21
+    Height = 160
+    Top = 56
+    Width = 225
+    DateTime = 45798
+    OnChange = Calendar1Change
+    TabOrder = 1
+  end
+  object Label2: TLabel
+    Left = 208
+    Height = 15
+    Top = 242
+    Width = 34
+    Caption = 'Label2'
+    ParentColor = False
+  end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    left = 58
+    top = 233
+  end
+end

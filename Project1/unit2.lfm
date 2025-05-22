@@ -1,0 +1,89 @@
+object Form2: TForm2
+  Left = 385
+  Height = 240
+  Top = 287
+  Width = 400
+  Caption = 'Form2'
+  ClientHeight = 240
+  ClientWidth = 400
+  LCLVersion = '1.4.4.0'
+  object LinpNama: TLabel
+    Left = 25
+    Height = 15
+    Top = 28
+    Width = 32
+    Caption = 'Nama'
+    ParentColor = False
+  end
+  object EBNama: TEdit
+    Left = 112
+    Height = 23
+    Top = 24
+    Width = 264
+    TabOrder = 0
+  end
+  object LabelAwal: TLabel
+    Left = 25
+    Height = 15
+    Top = 56
+    Width = 61
+    Caption = 'Tahun Lahir'
+    ParentColor = False
+  end
+  object thnLahir: TEdit
+    Left = 112
+    Height = 23
+    Top = 56
+    Width = 264
+    TabOrder = 1
+  end
+  object LabelAkhir: TLabel
+    Left = 25
+    Height = 15
+    Top = 87
+    Width = 83
+    Caption = 'Tahun Sekarang'
+    ParentColor = False
+  end
+  object thnSkg: TEdit
+    Left = 112
+    Height = 23
+    Top = 87
+    Width = 264
+    TabOrder = 2
+  end
+  object Kirim: TButton
+    Left = 304
+    Height = 25
+    Top = 200
+    Width = 75
+    Caption = 'Kirim'
+    OnClick = KirimClick
+    TabOrder = 3
+  end
+  object Lnama: TLabel
+    Left = 38
+    Height = 15
+    Top = 143
+    Width = 32
+    Caption = 'Nama'
+    ParentColor = False
+  end
+  object Lumur: TLabel
+    Left = 38
+    Height = 15
+    Top = 168
+    Width = 30
+    Caption = 'Umur'
+    ParentColor = False
+  end
+  object Clear: TButton
+    Left = 216
+    Height = 25
+    Top = 200
+    Width = 75
+    Caption = 'Clear'
+    OnClick = ClearClick
+    TabOrder = 4
+  end
+end

@@ -1,0 +1,224 @@
+object Form1: TForm1
+  Left = 686
+  Height = 319
+  Top = 207
+  Width = 622
+  Caption = 'Form1'
+  ClientHeight = 319
+  ClientWidth = 622
+  OnCreate = FormCreate
+  LCLVersion = '1.4.4.0'
+  WindowState = wsMaximized
+  object edDate: TDateEdit
+    Left = 24
+    Height = 23
+    Top = 24
+    Width = 127
+    CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+    OKCaption = 'OK'
+    CancelCaption = 'Cancel'
+    ReadOnly = True
+    DateOrder = doNone
+    ButtonWidth = 23
+    NumGlyphs = 1
+    MaxLength = 0
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 24
+    Height = 15
+    Top = 72
+    Width = 23
+    Caption = 'Baju'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 24
+    Height = 15
+    Top = 104
+    Width = 32
+    Caption = 'Harga'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 24
+    Height = 15
+    Top = 136
+    Width = 38
+    Caption = 'Jumlah'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 24
+    Height = 15
+    Top = 168
+    Width = 44
+    Caption = 'Subtotal'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 280
+    Height = 15
+    Top = 72
+    Width = 36
+    Caption = 'Celana'
+    ParentColor = False
+  end
+  object Label6: TLabel
+    Left = 280
+    Height = 15
+    Top = 104
+    Width = 32
+    Caption = 'Harga'
+    ParentColor = False
+  end
+  object Label7: TLabel
+    Left = 280
+    Height = 15
+    Top = 136
+    Width = 38
+    Caption = 'Jumlah'
+    ParentColor = False
+  end
+  object Label8: TLabel
+    Left = 280
+    Height = 15
+    Top = 168
+    Width = 44
+    Caption = 'Subtotal'
+    ParentColor = False
+  end
+  object edJmlBaju: TEdit
+    Left = 88
+    Height = 23
+    Top = 128
+    Width = 80
+    NumbersOnly = True
+    OnChange = edJmlBajuChange
+    ReadOnly = True
+    TabOrder = 1
+    Text = '0'
+  end
+  object edTtlHgBaju: TEdit
+    Left = 88
+    Height = 23
+    Top = 160
+    Width = 80
+    ReadOnly = True
+    TabOrder = 2
+    Text = '0'
+  end
+  object edHgBaju: TEdit
+    Left = 88
+    Height = 23
+    Top = 96
+    Width = 80
+    ReadOnly = True
+    TabOrder = 3
+    Text = '0'
+  end
+  object cbBaju: TComboBox
+    Left = 88
+    Height = 23
+    Top = 65
+    Width = 100
+    ItemHeight = 15
+    Items.Strings = (
+      'Blouse'
+      'Gamis'
+      'Kemeja'
+      'Kaos'
+    )
+    OnChange = cbBajuChange
+    TabOrder = 4
+  end
+  object edHgCelana: TEdit
+    Left = 344
+    Height = 23
+    Top = 96
+    Width = 80
+    ReadOnly = True
+    TabOrder = 5
+    Text = '0'
+  end
+  object edTtlHgCelana: TEdit
+    Left = 344
+    Height = 23
+    Top = 160
+    Width = 80
+    OnChange = edJmlBajuChange
+    ReadOnly = True
+    TabOrder = 6
+    Text = '0'
+  end
+  object cbCelana: TComboBox
+    Left = 344
+    Height = 23
+    Top = 65
+    Width = 100
+    ItemHeight = 15
+    Items.Strings = (
+      'Formal'
+      'Jogger'
+      'Cargo'
+      'Loose'
+    )
+    OnChange = cbCelanaChange
+    TabOrder = 7
+  end
+  object edJmlCelana: TEdit
+    Left = 344
+    Height = 23
+    Top = 128
+    Width = 80
+    NumbersOnly = True
+    OnChange = edJmlCelanaChange
+    ReadOnly = True
+    TabOrder = 8
+    Text = '0'
+  end
+  object btnBeli: TButton
+    Left = 168
+    Height = 25
+    Top = 200
+    Width = 75
+    Caption = 'Ok'
+    OnClick = btnBeliClick
+    TabOrder = 9
+  end
+  object Label9: TLabel
+    Left = 24
+    Height = 15
+    Top = 253
+    Width = 25
+    Caption = 'Total'
+    ParentColor = False
+  end
+  object edTotalHg: TEdit
+    Left = 88
+    Height = 23
+    Top = 245
+    Width = 80
+    ReadOnly = True
+    TabOrder = 10
+    Text = '0'
+  end
+  object btnClear: TButton
+    Left = 280
+    Height = 25
+    Top = 200
+    Width = 75
+    Caption = 'Clear'
+    OnClick = btnClearClick
+    TabOrder = 11
+  end
+  object btnClose: TButton
+    Left = 390
+    Height = 25
+    Top = 200
+    Width = 75
+    Caption = 'Close'
+    OnClick = btnCloseClick
+    TabOrder = 12
+  end
+end

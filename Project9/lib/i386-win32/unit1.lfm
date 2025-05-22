@@ -1,0 +1,130 @@
+object Form1: TForm1
+  Left = 415
+  Height = 194
+  Top = 198
+  Width = 514
+  Caption = 'Form1'
+  ClientHeight = 194
+  ClientWidth = 514
+  LCLVersion = '1.4.4.0'
+  object Label1: TLabel
+    Left = 26
+    Height = 15
+    Top = 25
+    Width = 23
+    Caption = 'Baju'
+    ParentColor = False
+  end
+  object cbBaju: TComboBox
+    Left = 72
+    Height = 23
+    Top = 17
+    Width = 100
+    ItemHeight = 15
+    Items.Strings = (
+      'Blouse'
+      'Gamis'
+      'Kemeja'
+      'Kaos'
+    )
+    OnChange = cbBajuChange
+    TabOrder = 0
+  end
+  object cbCelana: TComboBox
+    Left = 344
+    Height = 23
+    Top = 16
+    Width = 100
+    ItemHeight = 15
+    Items.Strings = (
+      'Formal Bahan'
+      'Jogger'
+      'Cargo'
+      'Loose'
+    )
+    OnChange = cbCelanaChange
+    TabOrder = 1
+  end
+  object Label2: TLabel
+    Left = 288
+    Height = 15
+    Top = 25
+    Width = 36
+    Caption = 'Celana'
+    ParentColor = False
+    OnClick = Label2Click
+  end
+  object Label3: TLabel
+    Left = 26
+    Height = 15
+    Top = 64
+    Width = 32
+    Caption = 'Harga'
+    ParentColor = False
+  end
+  object edHargaBaju: TEdit
+    Left = 72
+    Height = 23
+    Top = 56
+    Width = 100
+    TabOrder = 2
+  end
+  object Label4: TLabel
+    Left = 288
+    Height = 15
+    Top = 64
+    Width = 32
+    Caption = 'Harga'
+    ParentColor = False
+  end
+  object edHargaCelana: TEdit
+    Left = 344
+    Height = 23
+    Top = 56
+    Width = 100
+    TabOrder = 3
+  end
+  object btnPesan: TButton
+    Left = 120
+    Height = 25
+    Top = 104
+    Width = 75
+    Caption = 'Ok'
+    OnClick = btnPesanClick
+    TabOrder = 4
+  end
+  object btnHapus: TButton
+    Left = 216
+    Height = 25
+    Top = 104
+    Width = 75
+    Caption = '-'
+    OnClick = btnHapusClick
+    TabOrder = 5
+  end
+  object btnKeluar: TButton
+    Left = 312
+    Height = 25
+    Top = 104
+    Width = 75
+    Caption = 'x'
+    OnClick = btnKeluarClick
+    TabOrder = 6
+  end
+  object Label5: TLabel
+    Left = 26
+    Height = 15
+    Top = 152
+    Width = 25
+    Caption = 'Total'
+    ParentColor = False
+  end
+  object edTotal: TEdit
+    Left = 72
+    Height = 23
+    Top = 144
+    Width = 100
+    ReadOnly = True
+    TabOrder = 7
+  end
+end

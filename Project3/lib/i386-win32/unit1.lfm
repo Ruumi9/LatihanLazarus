@@ -1,0 +1,91 @@
+object Form1: TForm1
+  Left = 688
+  Height = 240
+  Top = 226
+  Width = 320
+  Caption = 'Form1'
+  ClientHeight = 240
+  ClientWidth = 320
+  OnCreate = FormCreate
+  LCLVersion = '1.4.4.0'
+  object Label1: TLabel
+    Left = 15
+    Height = 15
+    Top = 20
+    Width = 43
+    Caption = 'Panjang'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 15
+    Height = 15
+    Top = 56
+    Width = 29
+    Caption = 'Lebar'
+    ParentColor = False
+  end
+  object panjangEdit: TEdit
+    Left = 88
+    Height = 23
+    Top = 12
+    Width = 192
+    TabOrder = 0
+  end
+  object lebarEdit: TEdit
+    Left = 88
+    Height = 23
+    Top = 48
+    Width = 192
+    TabOrder = 1
+  end
+  object Clear: TButton
+    Left = 88
+    Height = 25
+    Top = 96
+    Width = 75
+    Caption = 'Clear'
+    OnClick = ClearClick
+    TabOrder = 2
+  end
+  object Label3: TLabel
+    Left = 15
+    Height = 15
+    Top = 144
+    Width = 24
+    Caption = 'Luas'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 15
+    Height = 15
+    Top = 184
+    Width = 39
+    Caption = 'Keliling'
+    ParentColor = False
+  end
+  object luasEdit: TEdit
+    Left = 88
+    Height = 23
+    Top = 136
+    Width = 192
+    ReadOnly = True
+    TabOrder = 3
+  end
+  object kelilingEdit: TEdit
+    Left = 88
+    Height = 23
+    Top = 176
+    Width = 192
+    ReadOnly = True
+    TabOrder = 4
+  end
+  object Result: TButton
+    Left = 205
+    Height = 25
+    Top = 96
+    Width = 75
+    Caption = '='
+    OnClick = ResultClick
+    TabOrder = 5
+  end
+end
