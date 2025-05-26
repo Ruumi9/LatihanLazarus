@@ -1,0 +1,57 @@
+unit Unit5;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls;
+
+type
+
+  { TForm5 }
+
+  TForm5 = class(TForm)
+    btnLogin: TButton;
+    edUsername: TEdit;
+    edPassword: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    procedure btnLoginClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  Form5: TForm5;
+
+implementation
+
+{$R *.lfm}
+
+{ TForm5 }
+
+procedure TForm5.FormCreate(Sender: TObject);
+begin
+
+end;
+
+procedure TForm5.btnLoginClick(Sender: TObject);
+var
+  username, password: String;
+begin
+   username:= edUsername.Text;
+   password:= edPassword.Text;
+   if (username = 'admin') and (password = 'admin') then
+    ShowMessage('Anda berhasil login')
+    else
+      ShowMessage('Username atau password tidak valid');
+
+end;
+
+end.
+

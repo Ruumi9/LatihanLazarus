@@ -1,0 +1,29 @@
+object Form7: TForm7
+  Left = 372
+  Height = 240
+  Top = 252
+  Width = 320
+  Caption = 'Form7'
+  ClientHeight = 240
+  ClientWidth = 320
+  OnCreate = FormCreate
+  LCLVersion = '1.4.4.0'
+  object LbTimer: TLabel
+    Left = 128
+    Height = 1
+    Top = 96
+    Width = 1
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -24
+    Font.Name = 'Schadow BT'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    left = 72
+    top = 160
+  end
+end

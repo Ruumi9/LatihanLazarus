@@ -1,0 +1,78 @@
+unit Unit4;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls;
+
+type
+
+  { TForm4 }
+
+  TForm4 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    edPanjang: TEdit;
+    edLebar: TEdit;
+    edKeliling: TEdit;
+    edLuas: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  Form4: TForm4;
+
+implementation
+
+{$R *.lfm}
+
+{ TForm4 }
+
+procedure TForm4.FormCreate(Sender: TObject);
+begin
+
+end;
+
+procedure TForm4.Button1Click(Sender: TObject);
+var
+   panjang, lebar, luas, keliling: Integer;
+begin
+  if (Trim(edPanjang.Text) = '') then
+   panjang:= 0
+  else
+   panjang:= StrToInt(edPanjang.Text);
+  if (Trim(edLebar.Text) = '') then
+    lebar:= 0
+  else
+    lebar:= StrToInt(edLebar.Text);
+
+  luas:= panjang * lebar;
+  keliling:= 2 * (panjang + lebar);
+  edLuas.Text:=IntToStr(luas);
+  edKeliling.Text:=IntToStr(keliling);
+end;
+
+procedure TForm4.Button2Click(Sender: TObject);
+begin
+  edKeliling.Text:= '';
+  edPanjang.Text:= '';
+  edLebar.Text:= '';
+  edLuas.Text:= '';
+
+end;
+
+end.
+

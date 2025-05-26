@@ -1,0 +1,113 @@
+object Form3: TForm3
+  Left = 510
+  Height = 274
+  Top = 177
+  Width = 354
+  Caption = '2. Selisih Tanggal'
+  ClientHeight = 274
+  ClientWidth = 354
+  LCLVersion = '1.4.4.0'
+  object Label1: TLabel
+    Left = 64
+    Height = 25
+    Top = 24
+    Width = 238
+    Caption = 'Menghitung Selisih Tanggal'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -21
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 16
+    Height = 15
+    Top = 79
+    Width = 70
+    Caption = 'Tanggal Awal'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 16
+    Height = 15
+    Top = 120
+    Width = 72
+    Caption = 'Tanggal Akhir'
+    ParentColor = False
+  end
+  object EdDateAwal: TDateEdit
+    Left = 112
+    Height = 23
+    Top = 72
+    Width = 168
+    CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+    OKCaption = 'OK'
+    CancelCaption = 'Cancel'
+    DateOrder = doNone
+    ButtonWidth = 23
+    NumGlyphs = 1
+    MaxLength = 0
+    TabOrder = 0
+  end
+  object EdDateAkhir: TDateEdit
+    Left = 112
+    Height = 23
+    Top = 112
+    Width = 167
+    CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+    OKCaption = 'OK'
+    CancelCaption = 'Cancel'
+    DateOrder = doNone
+    ButtonWidth = 23
+    NumGlyphs = 1
+    MaxLength = 0
+    TabOrder = 1
+  end
+  object btnHitung: TButton
+    Left = 16
+    Height = 25
+    Top = 152
+    Width = 75
+    Caption = 'Hitung'
+    OnClick = btnHitungClick
+    TabOrder = 2
+  end
+  object LbHariTrunc: TLabel
+    Left = 16
+    Height = 15
+    Top = 197
+    Width = 22
+    Caption = 'Hari'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    AnchorSideLeft.Control = LbHariTrunc
+    AnchorSideLeft.Side = asrBottom
+    Left = 72
+    Height = 15
+    Top = 197
+    Width = 73
+    BorderSpacing.Left = 34
+    Caption = 'Dengan Trunc'
+    ParentColor = False
+  end
+  object LbHariDaysB: TLabel
+    Left = 16
+    Height = 15
+    Top = 232
+    Width = 22
+    Caption = 'Hari'
+    ParentColor = False
+  end
+  object Label7: TLabel
+    Left = 72
+    Height = 15
+    Top = 232
+    Width = 117
+    Caption = 'Dengan Days Between'
+    ParentColor = False
+  end
+end

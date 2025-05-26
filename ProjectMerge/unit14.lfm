@@ -1,0 +1,173 @@
+object Form14: TForm14
+  Left = 492
+  Height = 434
+  Top = 164
+  Width = 473
+  Caption = 'Form14'
+  ClientHeight = 434
+  ClientWidth = 473
+  OnCreate = FormCreate
+  LCLVersion = '1.4.4.0'
+  object Label1: TLabel
+    Left = 128
+    Height = 24
+    Top = 24
+    Width = 161
+    Caption = 'Reservasi Hotel'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -19
+    Font.Name = 'Lucida Calligraphy'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 24
+    Height = 15
+    Top = 76
+    Width = 59
+    Caption = 'Tipe Kamar'
+    ParentColor = False
+  end
+  object cbKamar: TComboBox
+    Left = 120
+    Height = 23
+    Top = 68
+    Width = 200
+    ItemHeight = 15
+    Items.Strings = (
+      'Reguler'
+      'Delux'
+      'King'
+      'Super'
+    )
+    OnChange = cbKamarChange
+    TabOrder = 0
+  end
+  object Label3: TLabel
+    Left = 24
+    Height = 15
+    Top = 112
+    Width = 69
+    Caption = 'Harga Kamar'
+    ParentColor = False
+  end
+  object edHgKamar: TEdit
+    Left = 120
+    Height = 23
+    Top = 104
+    Width = 200
+    ReadOnly = True
+    TabOrder = 1
+  end
+  object Label4: TLabel
+    Left = 24
+    Height = 15
+    Top = 156
+    Width = 86
+    Caption = 'Lama Menginap'
+    ParentColor = False
+  end
+  object edMenginap: TEdit
+    Left = 208
+    Height = 23
+    Top = 148
+    Width = 112
+    NumbersOnly = True
+    OnChange = edMenginapChange
+    ReadOnly = True
+    TabOrder = 2
+  end
+  object Label5: TLabel
+    Left = 352
+    Height = 15
+    Top = 156
+    Width = 30
+    Caption = '(Hari)'
+    ParentColor = False
+  end
+  object btnHitung: TButton
+    Left = 245
+    Height = 25
+    Top = 192
+    Width = 75
+    Caption = 'Hitung'
+    Enabled = False
+    OnClick = btnHitungClick
+    TabOrder = 3
+  end
+  object Label6: TLabel
+    Left = 24
+    Height = 15
+    Top = 256
+    Width = 38
+    Caption = 'Jumlah'
+    ParentColor = False
+  end
+  object edSubTotal: TEdit
+    Left = 120
+    Height = 23
+    Top = 248
+    Width = 200
+    ReadOnly = True
+    TabOrder = 4
+  end
+  object Label7: TLabel
+    Left = 344
+    Height = 30
+    Top = 248
+    Width = 108
+    Caption = 'Diskon 10%'#13#10'Pembelian >= 1 Juta'
+    ParentColor = False
+  end
+  object Label8: TLabel
+    Left = 24
+    Height = 15
+    Top = 296
+    Width = 99
+    Caption = 'Keterangan Diskon'
+    ParentColor = False
+  end
+  object edKetDiskon: TEdit
+    Left = 208
+    Height = 23
+    Top = 288
+    Width = 112
+    ReadOnly = True
+    TabOrder = 5
+  end
+  object edTotal: TEdit
+    Left = 208
+    Height = 23
+    Top = 328
+    Width = 112
+    ReadOnly = True
+    TabOrder = 6
+  end
+  object Label9: TLabel
+    Left = 24
+    Height = 15
+    Top = 336
+    Width = 57
+    Caption = 'Total Bayar'
+    ParentColor = False
+  end
+  object btnSelesai: TButton
+    Left = 368
+    Height = 25
+    Top = 326
+    Width = 88
+    Caption = 'Selesai'
+    OnClick = btnSelesaiClick
+    TabOrder = 7
+  end
+  object edDiskon: TEdit
+    Left = 344
+    Height = 23
+    Top = 288
+    Width = 112
+    ReadOnly = True
+    TabOrder = 8
+  end
+end

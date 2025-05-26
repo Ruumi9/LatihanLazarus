@@ -1,0 +1,334 @@
+object Form15: TForm15
+  Left = 228
+  Height = 421
+  Top = 141
+  Width = 825
+  Caption = 'Form15'
+  ClientHeight = 421
+  ClientWidth = 825
+  LCLVersion = '1.4.4.0'
+  object GroupBox1: TGroupBox
+    Left = 32
+    Height = 225
+    Top = 72
+    Width = 337
+    Caption = 'Tambah Hari'
+    ClientHeight = 205
+    ClientWidth = 333
+    TabOrder = 0
+    object Label2: TLabel
+      Left = 8
+      Height = 15
+      Top = 16
+      Width = 72
+      Caption = 'Input Tanggal'
+      ParentColor = False
+    end
+    object edDateTmb: TDateEdit
+      Left = 112
+      Height = 23
+      Top = 8
+      Width = 103
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doNone
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object edTmbHari: TEdit
+      Left = 112
+      Height = 23
+      Top = 43
+      Width = 80
+      NumbersOnly = True
+      TabOrder = 1
+    end
+    object edTmbBulan: TEdit
+      Left = 112
+      Height = 23
+      Top = 82
+      Width = 80
+      NumbersOnly = True
+      TabOrder = 2
+    end
+    object edTmbTahun: TEdit
+      Left = 112
+      Height = 23
+      Top = 120
+      Width = 80
+      NumbersOnly = True
+      TabOrder = 3
+    end
+    object btnTmbBulan: TButton
+      Left = 192
+      Height = 25
+      Top = 82
+      Width = 26
+      Caption = '+'
+      OnClick = btnTmbBulanClick
+      TabOrder = 4
+    end
+    object btnTmbHari: TButton
+      Left = 192
+      Height = 25
+      Top = 43
+      Width = 26
+      Caption = '+'
+      OnClick = btnTmbHariClick
+      TabOrder = 5
+    end
+    object btnTmbTahun: TButton
+      Left = 192
+      Height = 25
+      Top = 120
+      Width = 26
+      Caption = '+'
+      OnClick = btnTmbTahunClick
+      TabOrder = 6
+    end
+    object edHslTmbHari: TEdit
+      Left = 232
+      Height = 23
+      Top = 45
+      Width = 88
+      ReadOnly = True
+      TabOrder = 7
+    end
+    object edHslTmbBulan: TEdit
+      Left = 232
+      Height = 23
+      Top = 82
+      Width = 88
+      ReadOnly = True
+      TabOrder = 8
+    end
+    object edHslTmbTahun: TEdit
+      Left = 232
+      Height = 23
+      Top = 120
+      Width = 88
+      ReadOnly = True
+      TabOrder = 9
+    end
+    object Label3: TLabel
+      Left = 8
+      Height = 15
+      Top = 53
+      Width = 22
+      Caption = 'Hari'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 8
+      Height = 15
+      Top = 92
+      Width = 30
+      Caption = 'Bulan'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 8
+      Height = 15
+      Top = 128
+      Width = 32
+      Caption = 'Tahun'
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 144
+      Height = 15
+      Top = 168
+      Width = 71
+      Caption = 'Hasil Tambah'
+      ParentColor = False
+    end
+    object edHslTambah: TEdit
+      Left = 232
+      Height = 23
+      Top = 160
+      Width = 88
+      ReadOnly = True
+      TabOrder = 10
+    end
+  end
+  object Label1: TLabel
+    Left = 312
+    Height = 39
+    Top = 8
+    Width = 208
+    Caption = 'Konversi Tanggal'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -32
+    Font.Name = 'Monotype Corsiva'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+  object GroupBox2: TGroupBox
+    Left = 408
+    Height = 328
+    Top = 72
+    Width = 393
+    Caption = 'Convert Tanggal'
+    ClientHeight = 308
+    ClientWidth = 389
+    TabOrder = 1
+    object Label7: TLabel
+      Left = 23
+      Height = 15
+      Top = 16
+      Width = 72
+      Caption = 'Input Tanggal'
+      ParentColor = False
+    end
+    object edDateConv: TDateEdit
+      Left = 104
+      Height = 23
+      Top = 8
+      Width = 144
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doNone
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object btnProsesConv: TButton
+      Left = 272
+      Height = 25
+      Top = 6
+      Width = 96
+      Caption = 'Proses'
+      OnClick = btnProsesConvClick
+      TabOrder = 1
+    end
+    object Label8: TLabel
+      Left = 23
+      Height = 15
+      Top = 53
+      Width = 22
+      Caption = 'Hari'
+      ParentColor = False
+    end
+    object edConvHari: TEdit
+      Left = 104
+      Height = 23
+      Top = 45
+      Width = 144
+      ReadOnly = True
+      TabOrder = 2
+    end
+    object Label9: TLabel
+      Left = 23
+      Height = 15
+      Top = 92
+      Width = 30
+      Caption = 'Bulan'
+      ParentColor = False
+    end
+    object edConvBulan: TEdit
+      Left = 104
+      Height = 23
+      Top = 82
+      Width = 144
+      ReadOnly = True
+      TabOrder = 3
+    end
+    object Label10: TLabel
+      Left = 23
+      Height = 15
+      Top = 128
+      Width = 32
+      Caption = 'Tahun'
+      ParentColor = False
+    end
+    object edConvTahun: TEdit
+      Left = 104
+      Height = 23
+      Top = 120
+      Width = 144
+      ReadOnly = True
+      TabOrder = 4
+    end
+    object Label11: TLabel
+      Left = 23
+      Height = 15
+      Top = 168
+      Width = 47
+      Caption = 'Format 1'
+      ParentColor = False
+    end
+    object edFormat1: TEdit
+      Left = 23
+      Height = 23
+      Top = 199
+      Width = 161
+      ReadOnly = True
+      TabOrder = 5
+    end
+    object Label12: TLabel
+      Left = 216
+      Height = 15
+      Top = 168
+      Width = 47
+      Caption = 'Format 2'
+      ParentColor = False
+    end
+    object edFormat2: TEdit
+      Left = 216
+      Height = 23
+      Top = 199
+      Width = 152
+      ReadOnly = True
+      TabOrder = 6
+    end
+    object Label13: TLabel
+      Left = 23
+      Height = 15
+      Top = 240
+      Width = 47
+      Caption = 'Format 3'
+      ParentColor = False
+    end
+    object edFormat3: TEdit
+      Left = 23
+      Height = 23
+      Top = 266
+      Width = 161
+      ReadOnly = True
+      TabOrder = 7
+    end
+    object Label14: TLabel
+      Left = 216
+      Height = 15
+      Top = 240
+      Width = 47
+      Caption = 'Format 4'
+      ParentColor = False
+    end
+    object edFormat4: TEdit
+      Left = 216
+      Height = 23
+      Top = 266
+      Width = 152
+      ReadOnly = True
+      TabOrder = 8
+    end
+  end
+  object btnReset: TButton
+    Left = 64
+    Height = 25
+    Top = 320
+    Width = 75
+    Caption = 'Reset'
+    OnClick = btnResetClick
+    TabOrder = 2
+  end
+end

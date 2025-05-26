@@ -1,0 +1,191 @@
+unit Unit15;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  EditBtn, dateutils;
+
+type
+
+  { TForm15 }
+
+  TForm15 = class(TForm)
+    btnReset: TButton;
+    btnTmbHari: TButton;
+    btnTmbBulan: TButton;
+    btnTmbTahun: TButton;
+    btnProsesConv: TButton;
+    edDateTmb: TDateEdit;
+    edDateConv: TDateEdit;
+    edTmbHari: TEdit;
+    edConvTahun: TEdit;
+    edFormat1: TEdit;
+    edFormat2: TEdit;
+    edFormat3: TEdit;
+    edFormat4: TEdit;
+    edTmbBulan: TEdit;
+    edTmbTahun: TEdit;
+    edHslTmbHari: TEdit;
+    edHslTmbBulan: TEdit;
+    edHslTmbTahun: TEdit;
+    edHslTambah: TEdit;
+    edConvHari: TEdit;
+    edConvBulan: TEdit;
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
+    Label1: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    procedure btnProsesConvClick(Sender: TObject);
+    procedure btnResetClick(Sender: TObject);
+    procedure btnTmbBulanClick(Sender: TObject);
+    procedure btnTmbHariClick(Sender: TObject);
+    procedure btnTmbTahunClick(Sender: TObject);
+    procedure hasilTambahHari();
+    procedure clearInput();
+  private
+    { private declarations }
+    inpTmbTgl, inpConvTgl, inpConvHari, inpConvBulan, inpConvTahun,
+    hslTambah, hslTmbHari, hslTmbBulan, hslTmbTahun: TDateTime;
+    tmbHari, tmbBulan, tmbTahun: integer;
+    convHari, convBulan, convTahun, format1, format2, format3, format4: string;
+  public
+    { public declarations }
+  end;
+
+var
+  Form15: TForm15;
+
+implementation
+
+{$R *.lfm}
+
+{ TForm15 }
+
+procedure TForm15.btnTmbHariClick(Sender: TObject);
+begin
+  if TryStrToDate(edDateTmb.Text, inpTmbTgl) then
+  begin
+    inpTmbTgl := StrToDate(edDateTmb.Text);
+    tmbHari := StrToIntDef(edTmbHari.Text, 0);
+    hslTmbHari := IncDay(inpTmbTgl, tmbHari);
+    edHslTmbHari.Text := DateToStr(hslTmbHari);
+    hasilTambahHari();
+  end
+  else
+  begin
+    ShowMessage('Masukkan tanggal');
+  end;
+
+end;
+
+procedure TForm15.btnTmbTahunClick(Sender: TObject);
+begin
+  if TryStrToDate(edDateTmb.Text, inpTmbTgl) then
+  begin
+    inpTmbTgl := StrToDate(edDateTmb.Text);
+    tmbTahun := StrToIntDef(edTmbTahun.Text, 0);
+    hslTmbTahun := IncYear(inpTmbTgl, tmbTahun);
+    edHslTmbTahun.Text := DateToStr(hslTmbTahun);
+    hasilTambahHari();
+  end
+  else
+  begin
+    ShowMessage('Masukkan tanggal');
+  end;
+end;
+
+procedure TForm15.btnTmbBulanClick(Sender: TObject);
+begin
+  if TryStrToDate(edDateTmb.Text, inpTmbTgl) then
+  begin
+    inpTmbTgl := StrToDate(edDateTmb.Text);
+    tmbBulan := StrToIntDef(edTmbBulan.Text, 0);
+    hslTmbBulan := IncMonth(inpTmbTgl, tmbBulan);
+    edHslTmbBulan.Text := DateToStr(hslTmbBulan);
+    hasilTambahHari();
+  end
+  else
+  begin
+    ShowMessage('Masukkan tanggal');
+  end;
+end;
+
+procedure TForm15.btnProsesConvClick(Sender: TObject);
+begin
+  if TryStrToDate(edDateConv.Text, inpConvTgl) then
+  begin
+    inpConvTgl := StrToDate(edDateConv.Text);
+    convHari := FormatDateTime('d', inpConvTgl);
+    convBulan := FormatDateTime('m', inpConvTgl);
+    convTahun := FormatDateTime('yyyy', inpConvTgl);
+    edConvHari.Text := convHari;
+    edConvBulan.Text := convBulan;
+    edConvTahun.Text := convTahun;
+    format1 := FormatDateTime('dddd, mmmm yyyy', inpConvTgl);
+    format2 := FormatDateTime('dd.mm.yyyy', inpConvTgl);
+    format3 := FormatDateTime('dd mmmm yyyy', inpConvTgl);
+    format4 := FormatDateTime('yyyy/mm/dd', inpConvTgl);
+    edFormat1.Text := format1;
+    edFormat2.Text := format2;
+    edFormat3.Text := format3;
+    edFormat4.Text := format4;
+  end
+  else
+  begin
+    ShowMessage('Masukkan Tanggal');
+  end;
+
+end;
+
+procedure TForm15.clearInput();
+var
+  i: Integer;
+begin
+  for i := 0 to ComponentCount - 1 do
+    if Components[i] is TEdit then
+      TEdit(Components[i]).Clear;
+end;
+
+procedure TForm15.btnResetClick(Sender: TObject);
+begin
+  clearInput();
+end;
+
+procedure TForm15.hasilTambahHari();
+begin
+  if TryStrToDate(edDateTmb.Text, inpTmbTgl) then
+  begin
+    inpTmbTgl := StrToDate(edDateTmb.Text);
+    inpTmbTgl := StrToDate(edDateTmb.Text);
+    tmbHari := StrToIntDef(edTmbHari.Text, 0);
+    tmbBulan := StrToIntDef(edTmbBulan.Text, 0);
+    tmbTahun := StrToIntDef(edTmbTahun.Text, 0);
+    hslTambah := IncYear(inpTmbTgl, tmbTahun);
+    hslTambah := IncMonth(hslTambah, tmbBulan);
+    hslTambah := IncDay(hslTambah, tmbHari);
+    edHslTambah.Text := DateToStr(hslTambah);
+  end
+  else
+  begin
+    ShowMessage('Masukkan tanggal');
+  end;
+
+
+end;
+
+end.

@@ -1,14 +1,59 @@
+
 unit Unit1;
+
 
 {$mode objfpc}{$H+}
 
 interface
 
+
+
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
+  ComCtrls, Unit2, Unit3, Unit4, Unit5, Unit6, Unit7, Unit8, Unit9, Unit10, Unit11,
+  Unit12, Unit14, Unit15,Unit16, Unit17;
+
 
 type
+
+  { TForm1 }
+
   TForm1 = class(TForm)
+    MainMenu1: TMainMenu;
+    LatihanAwal: TMenuItem;
+    Latihan5: TMenuItem;
+    Latihan3: TMenuItem;
+    Latihan4: TMenuItem;
+    Latihan1: TMenuItem;
+    Latihan2: TMenuItem;
+    LatihanPertengahan: TMenuItem;
+    Latihan6: TMenuItem;
+    Latihan7: TMenuItem;
+    Latihan8: TMenuItem;
+    Latihan9: TMenuItem;
+    Latihan10: TMenuItem;
+    LatihanAkhir: TMenuItem;
+    Latihan12: TMenuItem;
+    Latihan11: TMenuItem;
+    Latihan15: TMenuItem;
+    Latihan14: TMenuItem;
+    Latihan13: TMenuItem;
+    procedure Latihan10Click(Sender: TObject);
+    procedure Latihan11Click(Sender: TObject);
+    procedure Latihan12Click(Sender: TObject);
+    procedure Latihan13Click(Sender: TObject);
+    procedure Latihan14Click(Sender: TObject);
+    procedure Latihan15Click(Sender: TObject);
+    procedure Latihan1Click(Sender: TObject);
+    procedure Latihan2Click(Sender: TObject);
+    procedure Latihan3Click(Sender: TObject);
+    procedure Latihan4Click(Sender: TObject);
+    procedure Latihan5Click(Sender: TObject);
+    procedure Latihan7Click(Sender: TObject);
+    procedure Latihan8Click(Sender: TObject);
+    procedure Latihan9Click(Sender: TObject);
+    procedure LatihanPertengahanClick(Sender: TObject);
+    procedure Latihan6Click(Sender: TObject);
   private
     { private declarations }
   public
@@ -22,5 +67,90 @@ implementation
 
 {$R *.lfm}
 
-end.
+{ TForm1 }
 
+procedure TForm1.Latihan2Click(Sender: TObject);
+begin
+  Form3.ShowModal;
+end;
+
+procedure TForm1.Latihan1Click(Sender: TObject);
+begin
+
+  Form2.ShowModal;
+end;
+
+procedure TForm1.Latihan10Click(Sender: TObject);
+begin
+  Form11.ShowModal;
+end;
+
+procedure TForm1.Latihan11Click(Sender: TObject);
+begin
+  Form12.ShowModal;
+end;
+
+procedure TForm1.Latihan12Click(Sender: TObject);
+begin
+  Form14.ShowModal;
+end;
+
+procedure TForm1.Latihan13Click(Sender: TObject);
+begin
+  Form15.ShowModal;
+end;
+
+procedure TForm1.Latihan14Click(Sender: TObject);
+begin
+  Form16.ShowModal;
+end;
+
+procedure TForm1.Latihan15Click(Sender: TObject);
+begin
+  Form17.ShowModal;
+end;
+
+
+
+
+procedure TForm1.Latihan3Click(Sender: TObject);
+begin
+  Form4.ShowModal;
+end;
+
+procedure TForm1.Latihan4Click(Sender: TObject);
+begin
+  Form5.ShowModal;
+end;
+
+procedure TForm1.Latihan5Click(Sender: TObject);
+begin
+  Form6.ShowModal;
+end;
+
+procedure TForm1.Latihan7Click(Sender: TObject);
+begin
+  Form9.ShowModal;
+end;
+
+procedure TForm1.Latihan8Click(Sender: TObject);
+begin
+  Form8.ShowModal;
+end;
+
+procedure TForm1.Latihan9Click(Sender: TObject);
+begin
+  Form10.ShowModal;
+end;
+
+procedure TForm1.LatihanPertengahanClick(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.Latihan6Click(Sender: TObject);
+begin
+  Form7.ShowModal;
+end;
+
+end.

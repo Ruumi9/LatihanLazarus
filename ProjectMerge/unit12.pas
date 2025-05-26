@@ -1,0 +1,46 @@
+unit Unit12;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,Unit13;
+
+type
+
+  { TForm12 }
+
+  TForm12 = class(TForm)
+    btnKirim: TButton;
+    edNama: TEdit;
+    Label1: TLabel;
+    procedure btnKirimClick(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+    nama: String;
+  end;
+
+var
+  Form12: TForm12;
+
+implementation
+
+{$R *.lfm}
+
+{ TForm12 }
+
+procedure TForm12.btnKirimClick(Sender: TObject);
+begin
+       nama:=edNama.Text;
+       Form13.nama:=edNama.Text;
+       //Form12.Destroy;
+       Form12.Hide;
+       Form13.ShowModal;
+end;
+
+
+end.
+

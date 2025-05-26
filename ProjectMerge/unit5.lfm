@@ -1,0 +1,67 @@
+object Form5: TForm5
+  Left = 654
+  Height = 230
+  Top = 297
+  Width = 320
+  Caption = 'Form5'
+  ClientHeight = 230
+  ClientWidth = 320
+  OnCreate = FormCreate
+  LCLVersion = '1.4.4.0'
+  object Label1: TLabel
+    Left = 128
+    Height = 32
+    Top = 8
+    Width = 72
+    Caption = 'Login'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -27
+    Font.Name = 'Bookman Old Style'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 24
+    Height = 15
+    Top = 64
+    Width = 53
+    Caption = 'Username'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 24
+    Height = 15
+    Top = 112
+    Width = 50
+    Caption = 'Password'
+    ParentColor = False
+  end
+  object edUsername: TEdit
+    Left = 112
+    Height = 23
+    Top = 56
+    Width = 176
+    Anchors = [akTop, akLeft, akRight]
+    TabOrder = 0
+  end
+  object edPassword: TEdit
+    Left = 112
+    Height = 23
+    Top = 105
+    Width = 176
+    EchoMode = emPassword
+    PasswordChar = '*'
+    TabOrder = 1
+  end
+  object btnLogin: TButton
+    Left = 125
+    Height = 25
+    Top = 168
+    Width = 75
+    Caption = 'Login'
+    OnClick = btnLoginClick
+    TabOrder = 2
+  end
+end

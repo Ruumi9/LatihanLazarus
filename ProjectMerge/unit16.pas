@@ -1,0 +1,210 @@
+unit Unit16;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  MaskEdit;
+
+type
+
+  { TForm16 }
+
+  TForm16 = class(TForm)
+    btnFor: TButton;
+    btnWhile: TButton;
+    btnRepUntil: TButton;
+    edAngka1: TEdit;
+    edAngka2: TEdit;
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    lPerulanganDr: TLabel;
+    lSampai: TLabel;
+    memoGenap: TMemo;
+    memoPrima: TMemo;
+    memoGanjil: TMemo;
+    procedure btnForClick(Sender: TObject);
+    procedure btnRepUntilClick(Sender: TObject);
+    procedure btnWhileClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure GroupBox1Click(Sender: TObject);
+    procedure lSampaiClick(Sender: TObject);
+    procedure hitungGanjil(nilai: integer);
+    procedure hitungGenap(nilai: integer);
+    procedure hitungPrima(nilai: integer);
+  private
+    { private declarations }
+
+    jumlahGanjil, jumlahGenap, jumlahPrima: integer;
+    primaB: boolean;
+  public
+    { public declarations }
+  end;
+
+var
+  Form16: TForm16;
+
+implementation
+
+{$R *.lfm}
+
+{ TForm16 }
+
+procedure TForm16.lSampaiClick(Sender: TObject);
+begin
+
+end;
+
+procedure TForm16.FormCreate(Sender: TObject);
+begin
+end;
+
+procedure TForm16.btnForClick(Sender: TObject);
+var
+  angka1, angka2, i: integer;
+begin
+  jumlahGenap := 0;
+  jumlahGanjil := 0;
+  jumlahPrima := 0;
+  memoPrima.Lines.Clear;
+  memoGenap.Lines.Clear;
+  memoGanjil.Lines.Clear;
+  angka1 := StrToInt(edAngka1.Text);
+  angka2 := StrToInt(edAngka2.Text);
+  lPerulanganDr.Caption := 'Perulangan Dari : ' + IntToStr(angka1);
+  lSampai.Caption := 'Sampai : ' + IntToStr(angka2);
+  for i := angka1 to angka2 do
+  begin
+    hitungGanjil(i);
+    hitungGenap(i);
+    hitungPrima(i);
+    if (i = angka2) then
+    begin
+      memoGanjil.Lines.Add('Menggunakan perulangan For, jumlah bilangan Ganjil : ' +
+        IntToStr(jumlahGanjil));
+      memoGenap.Lines.Add('Menggunakan perulangan For, jumlah bilangan Genap : ' +
+        IntToStr(jumlahGenap));
+      memoPrima.Lines.Add('Menggunakan perulangan For, jumlah bilangan Prima : ' +
+        IntToStr(jumlahPrima));
+    end;
+  end;
+  GroupBox2.Visible := True;
+end;
+
+procedure TForm16.btnRepUntilClick(Sender: TObject);
+var
+  angka1, angka2, i: integer;
+begin
+  jumlahPrima := 0;
+  jumlahGanjil := 0;
+  jumlahGenap := 0;
+  memoPrima.Lines.Clear;
+  memoGenap.Lines.Clear;
+  memoGanjil.Lines.Clear;
+  angka1 := StrToInt(edAngka1.Text);
+  angka2 := StrToInt(edAngka2.Text);
+  i := angka1;
+  repeat
+    begin
+      hitungGenap(i);
+      hitungGanjil(i);
+      hitungPrima(i);
+      if i = angka2 then
+      begin
+        memoGanjil.Lines.Add(
+          'Menggunakan perulangan Repeat until, jumlah bilangan Ganjil : ' +
+          IntToStr(jumlahGanjil));
+        memoGenap.Lines.Add(
+          'Menggunakan perulangan Repeat until, jumlah bilangan Genap : ' +
+          IntToStr(jumlahGenap));
+        memoPrima.Lines.Add(
+          'Menggunakan perulangan Repeat until, jumlah bilangan Prima : ' +
+          IntToStr(jumlahPrima));
+      end;
+      i += 1;
+    end;
+  until i > angka2;
+  GroupBox2.Visible := True;
+end;
+
+procedure TForm16.btnWhileClick(Sender: TObject);
+var
+  angka1, angka2: integer;
+begin
+  jumlahPrima := 0;
+  jumlahGanjil := 0;
+  jumlahGenap := 0;
+  memoPrima.Lines.Clear;
+  memoGenap.Lines.Clear;
+  memoGanjil.Lines.Clear;
+  angka1 := StrToInt(edAngka1.Text);
+  angka2 := StrToInt(edAngka2.Text);
+  while angka1 <= angka2 do
+  begin
+    hitungGenap(angka1);
+    hitungGanjil(angka1);
+    hitungPrima(angka1);
+    if angka1 = angka2 then
+    begin
+      memoGanjil.Lines.Add('Menggunakan perulangan While, jumlah bilangan Ganjil : ' +
+        IntToStr(jumlahGanjil));
+      memoGenap.Lines.Add('Menggunakan perulangan While, jumlah bilangan Genap : ' +
+        IntToStr(jumlahGenap));
+      memoPrima.Lines.Add('Menggunakan perulangan While, jumlah bilangan Prima : ' +
+        IntToStr(jumlahPrima));
+    end;
+    angka1 += 1;
+  end;
+  GroupBox2.Visible := True;
+end;
+
+procedure TForm16.hitungGanjil(nilai: integer);
+begin
+  if nilai mod 2 = 1 then
+  begin
+    memoGanjil.Lines.Add(IntToStr(nilai));
+    jumlahGanjil += 1;
+  end;
+end;
+
+procedure TForm16.hitungGenap(nilai: integer);
+begin
+  if nilai mod 2 = 0 then
+  begin
+    memoGenap.Lines.Add(IntToStr(nilai));
+    jumlahGenap += 1;
+  end;
+end;
+
+procedure TForm16.hitungPrima(nilai: integer);
+var
+  init: integer;
+begin
+  if nilai < 2 then
+  begin
+    Exit;
+  end;
+  for init := 2 to trunc(sqrt(nilai)) do
+  begin
+    if nilai mod init = 0 then
+    begin
+      Exit;
+    end;
+  end;
+  memoPrima.Lines.Add(IntToStr(nilai));
+  jumlahPrima += 1;
+  Exit;
+end;
+
+procedure TForm16.GroupBox1Click(Sender: TObject);
+begin
+
+end;
+
+end.

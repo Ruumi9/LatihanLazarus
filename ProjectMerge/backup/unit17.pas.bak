@@ -1,0 +1,199 @@
+unit Unit17;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs,
+  StdCtrls, Math, ExtCtrls;
+
+type
+
+  { TForm17 }
+
+  TForm17 = class(TForm)
+    Button1: TButton;
+    btnProses: TButton;
+    btnClear: TButton;
+    Edit1: TEdit;
+    edNilaiAkhir: TEdit;
+    edGrade: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    ScrollBox1: TScrollBox;
+    procedure btnClearClick(Sender: TObject);
+    procedure btnProsesClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure ScrollBox1Click(Sender: TObject);
+    procedure tambahArray();
+    procedure hitungNilaiAkhir();
+    procedure hitungGrade(nilai: integer);
+    procedure clearTedit();
+    procedure clearTlabel();
+  private
+    { private declarations }
+    tEditArray: array of TEdit;
+    i, atas, nilaiUrut, nilaiAkhir, jumlahSiswa, subNilai: integer;
+    gradeNilai: char;
+    tLabelArray: array of TLabel;
+  public
+    { public declarations }
+  end;
+
+var
+  Form17: TForm17;
+
+implementation
+
+{$R *.lfm}
+
+{ TForm17 }
+
+procedure TForm17.Button1Click(Sender: TObject);
+begin
+  tambahArray();
+end;
+
+procedure TForm17.btnProsesClick(Sender: TObject);
+
+begin
+  subNilai := 0;
+  jumlahSiswa := 0;
+  nilaiAkhir := 0;
+  if Trim(Edit1.Text) = '' then
+  begin
+    ShowMessage('Masukkan Nilai');
+    Exit;
+  end;
+  subNilai += StrToInt(Edit1.Text);
+  jumlahSiswa += 1;
+  hitungNilaiAkhir();
+  hitungGrade(nilaiAkhir);
+
+end;
+
+procedure TForm17.btnClearClick(Sender: TObject);
+begin
+  Edit1.Clear;
+  edNilaiAkhir.Clear;
+  edGrade.Clear;
+  clearTedit();
+  clearTlabel();
+  i := 0;
+  atas := 0;
+  nilaiUrut := 0;
+end;
+
+procedure TForm17.clearTedit();
+var
+  awal: integer;
+begin
+  for awal := Low(tEditArray) to High(tEditArray) do
+  begin
+    if (Assigned(tEditArray[awal])) then
+    begin
+      tEditArray[awal].Free;
+      tEditArray[awal] := nil;
+    end;
+  end;
+  SetLength(tEditArray, 0);
+end;
+
+procedure TForm17.clearTlabel();
+var
+  awal: integer;
+begin
+  for awal := Low(tLabelArray) to High(tLabelArray) do
+  begin
+    tLabelArray[awal].Free;
+    tLabelArray[awal] := nil;
+  end;
+  SetLength(tLabelArray, 0);
+end;
+
+procedure TForm17.hitungNilaiAkhir();
+var
+  initial, nilai: integer;
+  tEditInput: TEdit;
+begin
+  nilai := 0;
+  for initial := Low(tEditArray) to High(tEditArray) do
+  begin
+    tEditInput := tEditArray[initial];
+    if (Trim(tEditInput.Text) = '') then
+    begin
+      Continue;
+    end;
+    nilai := StrToInt(tEditInput.Text);
+    subNilai += nilai;
+    jumlahSiswa += 1;
+  end;
+  nilaiAkhir := floor(subNilai / jumlahSiswa);
+  edNilaiAkhir.Text := IntToStr(nilaiAkhir);
+end;
+
+procedure TForm17.hitungGrade(nilai: integer);
+begin
+  if (nilai <= 60) then
+    gradeNilai := 'E'
+  else if (nilai <= 70) then
+    gradeNilai := 'D'
+  else if (nilai <= 80) then
+    gradeNilai := 'C'
+  else if (nilai <= 90) then
+    gradeNilai := 'B'
+  else if (nilai <= 100) then
+    gradeNilai := 'A';
+  edGrade.Text := gradeNilai;
+end;
+
+procedure TForm17.FormCreate(Sender: TObject);
+begin
+  SetLength(tEditArray, 0);
+  SetLength(tLabelArray, 0);
+  i := 0;
+  atas := 1;
+  nilaiUrut := 2;
+  nilaiAkhir := 0;
+  jumlahSiswa := 0;
+
+end;
+
+procedure TForm17.ScrollBox1Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm17.tambahArray();
+var
+  tEditBaru: TEdit;
+  labelBaru: TLabel;
+begin
+
+  SetLength(tEditArray, i + 1);
+  tEditBaru := TEdit.Create(Self);
+  tEditBaru.Parent := ScrollBox1;
+  tEditBaru.Top := 28 + i * 30;
+  tEditBaru.Left := 72;
+  tEditBaru.Width := 160;
+  tEditBaru.NumbersOnly := True;
+  tEditArray[i] := tEditBaru;
+
+  SetLength(tLabelArray, i + 1);
+  labelBaru := TLabel.Create(Self);
+  labelBaru.Parent := ScrollBox1;
+  labelBaru.Top := 33 + i * 30;
+  labelBaru.Caption := 'Nilai ' + IntToStr(nilaiUrut);
+  tLabelArray[i] := labelBaru;
+  i += 1;
+  atas += 1;
+  nilaiUrut += 1;
+end;
+
+
+end.
+

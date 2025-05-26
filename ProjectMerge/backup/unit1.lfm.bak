@@ -1,8 +1,84 @@
 object Form1: TForm1
-  Left = 219
+  Left = 665
   Height = 240
-  Top = 147
+  Top = 175
   Width = 320
   Caption = 'Form1'
+  Menu = MainMenu1
   LCLVersion = '1.4.4.0'
+  WindowState = wsMaximized
+  object MainMenu1: TMainMenu
+    left = 280
+    top = 8
+    object LatihanAwal: TMenuItem
+      Caption = 'Latihan 1-5'
+      object Latihan1: TMenuItem
+        Caption = '1. Menampilkan'
+        OnClick = Latihan1Click
+      end
+      object Latihan2: TMenuItem
+        Caption = '2. Menghitung Selisih Hari'
+        OnClick = Latihan2Click
+      end
+      object Latihan3: TMenuItem
+        Caption = '3. Hitung Bangun'
+        OnClick = Latihan3Click
+      end
+      object Latihan4: TMenuItem
+        Caption = '4. Login'
+        OnClick = Latihan4Click
+      end
+      object Latihan5: TMenuItem
+        Caption = '5. Kalender'
+        OnClick = Latihan5Click
+      end
+    end
+    object LatihanPertengahan: TMenuItem
+      Caption = 'Latihan 6-10'
+      OnClick = LatihanPertengahanClick
+      object Latihan6: TMenuItem
+        Caption = '6. Timer'
+        OnClick = Latihan6Click
+      end
+      object Latihan7: TMenuItem
+        Caption = '7. Kalkulator'
+        OnClick = Latihan7Click
+      end
+      object Latihan8: TMenuItem
+        Caption = '8. RB Jurusan'
+        OnClick = Latihan8Click
+      end
+      object Latihan9: TMenuItem
+        Caption = '9. RB Pilihan'
+        OnClick = Latihan9Click
+      end
+      object Latihan10: TMenuItem
+        Caption = '10. Harga Pakaian'
+        OnClick = Latihan10Click
+      end
+    end
+    object LatihanAkhir: TMenuItem
+      Caption = 'Latihan 11-15'
+      object Latihan11: TMenuItem
+        Caption = '11. Hitung Tgl'
+        OnClick = Latihan11Click
+      end
+      object Latihan12: TMenuItem
+        Caption = '12. Penginapan'
+        OnClick = Latihan12Click
+      end
+      object Latihan13: TMenuItem
+        Caption = '13. Konversi Tgl'
+        OnClick = Latihan13Click
+      end
+      object Latihan14: TMenuItem
+        Caption = '14. Perulangan'
+        OnClick = Latihan14Click
+      end
+      object Latihan15: TMenuItem
+        Caption = '15. Grade Nilai'
+        OnClick = Latihan15Click
+      end
+    end
+  end
 end

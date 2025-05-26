@@ -1,0 +1,161 @@
+object Form16: TForm16
+  Left = 426
+  Height = 434
+  Top = 142
+  Width = 784
+  Caption = 'Form16'
+  ClientHeight = 434
+  ClientWidth = 784
+  OnCreate = FormCreate
+  LCLVersion = '1.4.4.0'
+  object Label1: TLabel
+    Left = 64
+    Height = 32
+    Top = 16
+    Width = 228
+    Caption = 'Latihan Perulangan'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -27
+    Font.Name = 'Futura Bk BT'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object GroupBox1: TGroupBox
+    Left = 40
+    Height = 304
+    Top = 80
+    Width = 281
+    Caption = 'Input Nilai Perulangan'
+    ClientHeight = 284
+    ClientWidth = 277
+    TabOrder = 0
+    OnClick = GroupBox1Click
+    object Label2: TLabel
+      Left = 16
+      Height = 15
+      Top = 40
+      Width = 43
+      Caption = 'Angka 1'
+      ParentColor = False
+    end
+    object edAngka1: TEdit
+      Left = 88
+      Height = 23
+      Top = 32
+      Width = 160
+      NumbersOnly = True
+      TabOrder = 0
+    end
+    object Label3: TLabel
+      Left = 16
+      Height = 15
+      Top = 91
+      Width = 43
+      Caption = 'Angka 2'
+      ParentColor = False
+    end
+    object edAngka2: TEdit
+      Left = 88
+      Height = 23
+      Top = 83
+      Width = 160
+      NumbersOnly = True
+      TabOrder = 1
+    end
+    object btnFor: TButton
+      Left = 88
+      Height = 25
+      Top = 136
+      Width = 104
+      Caption = 'FOR'
+      OnClick = btnForClick
+      TabOrder = 2
+    end
+    object btnWhile: TButton
+      Left = 88
+      Height = 25
+      Top = 184
+      Width = 104
+      Caption = 'WHILE'
+      OnClick = btnWhileClick
+      TabOrder = 3
+    end
+    object btnRepUntil: TButton
+      Left = 88
+      Height = 25
+      Top = 232
+      Width = 104
+      Caption = 'REPEAT UNTIL'
+      OnClick = btnRepUntilClick
+      TabOrder = 4
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 368
+    Height = 304
+    Top = 80
+    Width = 385
+    ClientHeight = 284
+    ClientWidth = 381
+    TabOrder = 1
+    Visible = False
+    object Label4: TLabel
+      Left = 144
+      Height = 26
+      Top = 0
+      Width = 98
+      Caption = 'Perulangan'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -21
+      Font.Name = 'Corbel'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsItalic]
+      ParentColor = False
+      ParentFont = False
+    end
+    object lPerulanganDr: TLabel
+      Left = 24
+      Height = 15
+      Top = 32
+      Width = 84
+      Caption = 'Perulangan Dari'
+      ParentColor = False
+    end
+    object lSampai: TLabel
+      Left = 272
+      Height = 15
+      Top = 32
+      Width = 39
+      Caption = 'Sampai'
+      ParentColor = False
+      OnClick = lSampaiClick
+    end
+    object memoGanjil: TMemo
+      Left = 24
+      Height = 192
+      Top = 65
+      Width = 112
+      ScrollBars = ssAutoBoth
+      TabOrder = 0
+    end
+    object memoGenap: TMemo
+      Left = 136
+      Height = 192
+      Top = 65
+      Width = 122
+      ScrollBars = ssAutoBoth
+      TabOrder = 1
+    end
+    object memoPrima: TMemo
+      Left = 256
+      Height = 192
+      Top = 65
+      Width = 112
+      ScrollBars = ssAutoBoth
+      TabOrder = 2
+    end
+  end
+end
